@@ -8,8 +8,14 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+gem 'bootstrap-sass',   '3.4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 4.0'
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -36,10 +42,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '1.4.2'
+  gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails', ">= 3.9.0"
+  
 end
 
 group :development do
@@ -49,6 +56,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
 end
 
 group :test do
@@ -59,7 +67,6 @@ group :test do
   gem 'rails-controller-testing', '1.0.4'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec-rails'
   gem 'rails-controller-testing', '1.0.4'
   gem 'minitest',                 '5.11.3'
   gem 'minitest-reporters',       '1.3.8'
