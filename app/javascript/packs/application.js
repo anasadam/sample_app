@@ -17,9 +17,6 @@
 
 console.log('Hello World from Webpacker')
 
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
 require("jquery")
 import "bootstrap"
 
