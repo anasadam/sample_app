@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  subject {User.new(name:"Iman", email:'iman@gymleads.com')}
+  subject {User.new(name:"Iman", email:'iman@gymleads.com',password:'123456')}
 
   #check fot email is not empty 
   it "is not valid when email is empty" do 
@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
   end
 
   it "name should not be too long" do 
-    subject.name = 'n' * 50
+    subject.name = 'n' * 5
     expect(subject).to be_valid
   end 
 
