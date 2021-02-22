@@ -26,4 +26,9 @@ RSpec.describe User, type: :model do
     expect(subject).to be_valid
   end 
 
+  it "authenticated? should return false for a user with nil digest" do
+
+    expect(subject.authenticated?('')).to be false
+ end
+
 end
