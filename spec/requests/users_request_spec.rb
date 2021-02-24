@@ -33,4 +33,9 @@ RSpec.describe "Users", type: :request do
         assert_equal name,  @user.name
         assert_equal email, @user.email
       end
+
+      it "should redirect index when not logged in" do
+        get users_path
+        assert_redirected_to login_url
+      end
 end
