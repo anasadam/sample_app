@@ -5,9 +5,14 @@ module LoginHelpers
     !session[:user_id].nil?
   end
 
-  # Log in as a particular user.
-  def log_in_as(user)
+  def log_in_as(user, password: "123456", remember_me: "1")
+    post login_path, params: { session: { email: user.email,
+                                          password: password,
+                                          remember_me: remember_me } } 
+end
+
+def log_in_with_session(user)
     session[:user_id] = user.id
-  end
+end
   
 end 

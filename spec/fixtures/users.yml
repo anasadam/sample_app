@@ -4,7 +4,7 @@ adam:
   password_digest: <%= User.digest('123456') %>
 
 iman:
-  name: Iman
+  name: iman
   email: iman@gymleads.net
   password_digest: <%= User.digest('123456') %>
   admin: true

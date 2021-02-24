@@ -8,7 +8,7 @@ RSpec.describe "UsersEdits", type: :request do
   describe "GET /edit_user_path" do
     it "works! (now write some real specs)" do
       @user = users(:iman)
-      log_in_as(users(:iman))
+      log_in_as(@user)
       get edit_user_path(@user)
       expect(response).to have_http_status(200)
     end
@@ -43,7 +43,7 @@ RSpec.describe "UsersEdits", type: :request do
                                                 email: email,
                                                 password:              "",
                                                 password_confirmation: "" } }
-      assert_not flash.empty?
+      expect(flash.empty?).to be false
       assert_redirected_to @user
       @user.reload
       assert_equal name,  @user.name
